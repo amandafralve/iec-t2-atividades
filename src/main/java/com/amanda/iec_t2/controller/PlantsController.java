@@ -24,11 +24,7 @@ public class PlantsController {
         3, Map.of("popular", "Costela de Adão", "cientifico", "Monstera adansonii")
     ));
 
-    // GET ALL
-    @GetMapping
-    public ResponseEntity<Map<Integer, Map<String, String>>> getPlants() {
-        return ResponseEntity.ok(plants);
-    }
+  
 
     // GET BY ID
     @GetMapping("/{id}")
@@ -51,6 +47,13 @@ public class PlantsController {
                 "cientifico", plant.get("cientifico")
             )
         );
+    }
+
+      
+    @GetMapping
+    public ResponseEntity<Map<Integer, Map<String, String>>> getPlants() {
+        return ResponseEntity.ok(plants);
+
     }
 
     // POST - ADD PLANT
